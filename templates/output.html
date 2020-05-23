@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <title>DistEval</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">DistEval</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/output">Output <span class="sr-only">(current)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container main-body">
+            <div class="card section-one">
+                <div class="card-header card-title">Section I: Summary</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-6">
+                            <p class="card-text">RR Input</p>
+                        </div>
+                        <div class="col-md-9 col-sm-6">
+                            <p class="card-text">http://iris.rnet.missouri.edu/coneva/download/web-server-examples/1a3aA.zip</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-6">
+                            <p class="card-text">PDB Input</p>
+                        </div>
+                        <div class="col-md-9 col-sm-6">
+                            <p class="card-text">http://iris.rnet.missouri.edu/coneva/download/web-server-examples/1a3aA.pdb</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 col-sm-6">
+                            <p class="card-text">Sequence Length</p>
+                        </div>
+                        <div class="col-md-9 col-sm-6">
+                            <p class="card-text">RR - 145 , Native - 145 </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card section-two">
+                <div class="card-header card-title">Section II</div>
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+
+            <div class="card section-three">
+                <div class="card-header card-title">Section III: Chord Diagram</div>
+                <div class="card-body">
+                    <div class="row">
+                        {% if urls.chord|length > 0 %}
+                            {% for url in urls.chord %}
+                                <div class="col-md-6">
+                                    <img class="img-thumbnail img-round" src={{ url }}>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="card section-four">
+                <div class="card-header card-title">Section IV: Distance Maps</div>
+                <div class="card-body">
+                    <div class="row">
+                        {% if urls.distmap|length > 0 %}
+                            {% for url in urls.distmap %}
+                                <div class="col-md-6">
+                                    <img class="img-thumbnail img-round" src={{ url }}>
+                                </div>
+                            {% endfor %}
+                        {% endif %}                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

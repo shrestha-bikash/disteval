@@ -1,0 +1,23 @@
+.main-container {
+    margin: 0 3em;
+}
+
+.navbar-brand {
+    font-size: 2em;
+}
+
+.main-body {
+    margin-top: 1em;
+}
+
+.main-body .card {
+    margin-bottom: 1em;
+}
+
+.card > .card-title {
+    font-size: 1.2em;
+}
+
+.card .img-round {
+    margin-bottom: 1em;
+}

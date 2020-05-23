@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <title>DistEval</title>
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">DistEval</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/output">Output</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container main-body">
+        <form>
+            <div class="form-group">
+                <label for="rr-file">Input RR or NPY file</label>
+                <textarea class="form-control" rows="5" id="rr-file"  placeholder="(1) Paste RR file contents or
+(2) Paste a http link, for instance, http://iris.rnet.missouri.edu/coneva/download/test/1aapA.rr"></textarea>
+                
+            </div>
+            <div class="form-group">
+                <label for="upload-rr">Upload a RR/NPY file or zip file</label>
+                <input type="file" class="form-control-file" id="upload-rr">
+            </div>
+            <div class="form-group">
+                <label for="pdb-file">Input PDB file</label>
+                <textarea class="form-control" rows="5" id="pdb-file" placeholder="(1) Paste a http link, for instance, 'http://www.rcsb.org/pdb/files/3E7U.pdb' or
+(2) Paste contents of PDB file"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="upload-pdb">Upload a PDB file</label>
+                <input type="file" class="form-control-file" id="upload-pdb">
+            </div>
+            <!-- <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div> -->
+            <button type="submit" class="btn btn-primary submit-btn">Run Evaluation</button>
+          </form>
+      </div>
+  </div>
+{% endblock %}
