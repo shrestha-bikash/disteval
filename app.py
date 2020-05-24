@@ -26,6 +26,9 @@ def output():
                 'http://deep.cs.umsl.edu/prayogrealdistance/jobs/T1025/T1025.realdist.npy.png'
             ]
         }
+        data = {
+            'urls': urls
+        }
         rr_path = ''
         pdb_path = ''
         if 'rr-file' not in request.files:
@@ -57,9 +60,14 @@ def output():
             img_name = name_rr.split('.')[0] + '_heatmap.png'
             os.system('python3 heatmap.py ' + rr_path + ' ' + pdb_path + ' ' + img_name)
             # res = plot_dl_vs_3dmodel(rr_path, pdb_path)
-            urls['path'] = f'static/images/{img_name}'
+            res = {
+                'rr_name': name_rr,
+                'pdb_name': name_pdb,
+                'path': f'static/images/{img_name}'
+            }
+            data['res'] = res
 
-        return render_template('output.html', urls=urls)
+        return render_template('output.html', data=data)
     else:
         return render_template('output.html')
 

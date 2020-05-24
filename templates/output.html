@@ -35,17 +35,21 @@
                         <div class="col-md-2 col-sm-6">
                             <p class="card-text">RR Input</p>
                         </div>
+                        {% if data.res is defined %}
                         <div class="col-md-9 col-sm-6">
-                            <p class="card-text">http://iris.rnet.missouri.edu/coneva/download/web-server-examples/1a3aA.zip</p>
+                            <p class="card-text">{{data.res.rr_name}}</p>
                         </div>
+                        {% endif %}
                     </div>
                     <div class="row">
                         <div class="col-md-2 col-sm-6">
                             <p class="card-text">PDB Input</p>
                         </div>
+                        {% if data.res is defined %}
                         <div class="col-md-9 col-sm-6">
-                            <p class="card-text">http://iris.rnet.missouri.edu/coneva/download/web-server-examples/1a3aA.pdb</p>
+                            <p class="card-text">{{data.res.pdb_name}}</p>
                         </div>
+                        {% endif %}
                     </div>
                     <div class="row">
                         <div class="col-md-2 col-sm-6">
@@ -70,8 +74,8 @@
                 <div class="card-header card-title">Section III: Chord Diagram</div>
                 <div class="card-body">
                     <div class="row">
-                        {% if urls.chord|length > 0 %}
-                            {% for url in urls.chord %}
+                        {% if data is defined and (data.urls.chord|length > 0) %}
+                            {% for url in data.urls.chord %}
                                 <div class="col-md-6">
                                     <img class="img-thumbnail img-round" src={{ url }}>
                                 </div>
@@ -85,13 +89,13 @@
                 <div class="card-header card-title">Section IV: Distance Maps</div>
                 <div class="card-body">
                     <div class="row">
-                        {% if urls.path %}
+                        {% if data.res is defined %}
                             <div class="col-md-6">
-                                <img class="img-thumbnail img-round" src={{ urls.path }}>
+                                <img class="img-thumbnail img-round" src={{ data.res.path }}>
                             </div> 
                         {% endif %} 
-                        {% if urls.distmap|length > 0 %}
-                            {% for url in urls.distmap %}
+                        {% if data is defined and (data.urls.distmap|length > 0) %}
+                            {% for url in data.urls.distmap %}
                                 <div class="col-md-6">
                                     <img class="img-thumbnail img-round" src={{ url }}>
                                 </div>
