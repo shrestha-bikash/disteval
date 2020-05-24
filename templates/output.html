@@ -85,13 +85,19 @@
                 <div class="card-header card-title">Section IV: Distance Maps</div>
                 <div class="card-body">
                     <div class="row">
+                        {% if urls.path %}
+                            <div class="col-md-6">
+                                <img class="img-thumbnail img-round" src={{ urls.path }}>
+                            </div> 
+                        {% endif %} 
                         {% if urls.distmap|length > 0 %}
                             {% for url in urls.distmap %}
                                 <div class="col-md-6">
                                     <img class="img-thumbnail img-round" src={{ url }}>
                                 </div>
                             {% endfor %}
-                        {% endif %}                        
+                        {% endif %}
+                                               
                     </div>
                 </div>
             </div>

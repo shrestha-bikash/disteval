@@ -21,3 +21,15 @@
 .card .img-round {
     margin-bottom: 1em;
 }
+
+.flashes {
+    width: 25%;
+    position: absolute;
+    z-index: 11;
+    right: 35%;
+    top: 0;
+}
+
+.alert {
+    text-align: center;
+}

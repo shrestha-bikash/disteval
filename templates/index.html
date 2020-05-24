@@ -28,25 +28,25 @@
       </nav>
 
       <div class="container main-body">
-        <form>
+        <form method="POST" action="/output" enctype = "multipart/form-data">
             <div class="form-group">
-                <label for="rr-file">Input RR or NPY file</label>
-                <textarea class="form-control" rows="5" id="rr-file"  placeholder="(1) Paste RR file contents or
+                <label for="rr-raw">Input RR or NPY file</label>
+                <textarea class="form-control" rows="5" id="rr-raw" name="rr-raw"  placeholder="(1) Paste RR file contents or
 (2) Paste a http link, for instance, http://iris.rnet.missouri.edu/coneva/download/test/1aapA.rr"></textarea>
                 
             </div>
             <div class="form-group">
-                <label for="upload-rr">Upload a RR/NPY file or zip file</label>
-                <input type="file" class="form-control-file" id="upload-rr">
+                <label for="rr-file">Upload a RR/NPY file or zip file</label>
+                <input type="file" class="form-control-file" id="rr-file" name="rr-file">
             </div>
             <div class="form-group">
-                <label for="pdb-file">Input PDB file</label>
-                <textarea class="form-control" rows="5" id="pdb-file" placeholder="(1) Paste a http link, for instance, 'http://www.rcsb.org/pdb/files/3E7U.pdb' or
+                <label for="pdb-raw">Input PDB file</label>
+                <textarea class="form-control" rows="5" id="pdb-raw" name="pdb-raw" placeholder="(1) Paste a http link, for instance, 'http://www.rcsb.org/pdb/files/3E7U.pdb' or
 (2) Paste contents of PDB file"></textarea>
             </div>
             <div class="form-group">
-                <label for="upload-pdb">Upload a PDB file</label>
-                <input type="file" class="form-control-file" id="upload-pdb">
+                <label for="pdb-file">Upload a PDB file</label>
+                <input type="file" class="form-control-file" id="pdb-file" name="pdb-file">
             </div>
             <!-- <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
