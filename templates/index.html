@@ -54,6 +54,63 @@
             </div> -->
             <button type="submit" class="btn btn-primary submit-btn">Run Evaluation</button>
           </form>
+
+          <div class="examples-sec">
+              <h4>Some of the examples that can be tested:</h4>
+              <!-- <div class="card">
+                <div class="casp13">
+                    <h6>Set 1: Set of 150 most representative proteins from PDNET</h6>
+                    <div class="item-list">
+                      {% for item in list1 %}
+                        <span class="badge badge-info">{{ item }}</span>
+                      {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+              <h6>Set 2: Set of proteins from casp13</h6>
+            </div> -->
+            <div id="accordion">
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Set 1: Set of proteins from casp13
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+                    <div class="item-list">
+                      {% for item in list2 %}
+                        <span class="badge badge-info">{{ item }}</span>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Set 2: Set of 150 most representative proteins from PDNET
+                    </button>
+                  </h5>
+                </div>
+            
+                <div id="collapseOne" class="collapse collapsed" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                    <div class="item-list">
+                      {% for item in list1 %}
+                        <span class="badge badge-info">{{ item }}</span>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
       </div>
   </div>
 {% endblock %}

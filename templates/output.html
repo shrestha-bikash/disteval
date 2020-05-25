@@ -71,22 +71,7 @@
             </div>
 
             <div class="card section-three">
-                <div class="card-header card-title">Section III: Chord Diagram</div>
-                <div class="card-body">
-                    <div class="row">
-                        {% if data is defined and (data.urls.chord|length > 0) %}
-                            {% for url in data.urls.chord %}
-                                <div class="col-md-6">
-                                    <img class="img-thumbnail img-round" src={{ url }}>
-                                </div>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-
-            <div class="card section-four">
-                <div class="card-header card-title">Section IV: Distance Maps</div>
+                <div class="card-header card-title">Section III: Distance Maps</div>
                 <div class="card-body">
                     <div class="row">
                         {% if data.res is defined %}
@@ -102,6 +87,21 @@
                             {% endfor %}
                         {% endif %}
                                                
+                    </div>
+                </div>
+            </div>
+
+            <div class="card section-four">
+                <div class="card-header card-title">Section IV: Chord Diagram</div>
+                <div class="card-body">
+                    <div class="row">
+                        {% if data is defined and (data.urls.chord|length > 0) %}
+                            {% for url in data.urls.chord %}
+                                <div class="col-md-6">
+                                    <img class="img-thumbnail img-round" src={{ url }}>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
             </div>

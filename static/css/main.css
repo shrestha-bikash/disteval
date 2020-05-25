@@ -14,6 +14,28 @@
     margin-bottom: 1em;
 }
 
+.examples-sec {
+    margin-top: 1.5em;
+}
+
+.examples-sec .card {
+    /* padding: 1em; */
+}
+
+.btn-link:hover {
+    text-decoration: none;
+}
+
+.btn-link:focus {
+    text-decoration: none;
+}
+
+.badge {
+    font-weight: 500;
+    padding: 0.4em .5em;
+    cursor: pointer;
+}
+
 .card > .card-title {
     font-size: 1.2em;
 }

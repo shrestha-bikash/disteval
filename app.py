@@ -9,9 +9,19 @@ app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+def get_protein_list(lst_file):
+    plist = []
+    f = open(lst_file, 'r')
+    for l in f.readlines():
+        plist.append(l.strip().split()[0])
+    
+    return plist
+
 @app.route('/')
 def index():
-    return render_template('index.html')
+    p_list = get_protein_list('static/misc/psicov.lst')
+    c_list = get_protein_list('static/misc/casp13.txt')
+    return render_template('index.html', list1=p_list, list2=c_list)
 
 @app.route('/output', methods=['POST', 'GET'])
 def output():
